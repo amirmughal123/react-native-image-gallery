@@ -235,8 +235,10 @@ export default class ViewPager extends PureComponent {
     }
 
     validPage (page) {
-        page = Math.min(this.props.pageDataArray.length - 1, page);
-        page = Math.max(0, page);
+        if (this.props.pageDataArray.length != 0) {
+            page = Math.min(this.props.pageDataArray.length - 1, page);
+            page = Math.max(0, page);
+        }
         return page;
     }
 
